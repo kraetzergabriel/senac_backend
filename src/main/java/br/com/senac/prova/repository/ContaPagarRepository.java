@@ -9,9 +9,9 @@ import java.util.List;
 
 public interface ContaPagarRepository extends JpaRepository<ContaPagar, Integer> {
 
-    @Query("select new br.com.senac.prova.vo.TotalConta(b.nome,sum(a.valor))" +
-            "from ContaPagar a" +
-            "inner join TipoDespesa b" +
-            "group by b.nome")
+    @Query("select new br.com.senac.prova.vo.TotalConta(b.nome,sum(a.valor)) " +
+            " from ContaPagar a" +
+            " inner join TipoDespesa b" +
+            " group by b.nome")
     List<TotalConta> findTotalConta();
 }

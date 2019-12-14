@@ -3,6 +3,8 @@ package br.com.senac.prova.domain;
 import com.sun.istack.NotNull;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
@@ -10,6 +12,7 @@ public class Pessoa {
 
     @Id
     @NotNull
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer codigo;
 
     @NotNull

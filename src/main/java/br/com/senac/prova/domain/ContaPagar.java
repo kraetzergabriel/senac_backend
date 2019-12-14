@@ -2,16 +2,14 @@ package br.com.senac.prova.domain;
 
 import com.sun.istack.NotNull;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
 public class ContaPagar {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer codigo;
 
     @NotNull
