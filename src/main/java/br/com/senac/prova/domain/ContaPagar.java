@@ -1,5 +1,6 @@
 package br.com.senac.prova.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -22,11 +23,13 @@ public class ContaPagar {
 
     @NotNull
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
 
     @NotNull
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "tipodespesa_id")
     private TipoDespesa tipoDespesa;
 

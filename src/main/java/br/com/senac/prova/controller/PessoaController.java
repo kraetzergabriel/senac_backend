@@ -15,6 +15,7 @@ public class PessoaController {
     @Autowired
     private PessoaRepository repository;
 
+    @CrossOrigin
     @PostMapping
     public Pessoa salvar(@RequestBody @Valid Pessoa pessoa){
         return repository.save(pessoa);

@@ -18,6 +18,7 @@ public class ContaPagarController {
     private ContaPagarRepository repository;
 
     @PostMapping
+    @CrossOrigin
     public ResponseEntity<?> salvar(@RequestBody @Valid ContaPagar contaPagar){
         if (contaPagar.getDataVencimento().isAfter(contaPagar.getDataEmissao())) {
             return ResponseEntity.badRequest().body("DataVencimento: não poderá ser maior que a data de emissão");
@@ -26,7 +27,8 @@ public class ContaPagarController {
         return ResponseEntity.ok(this.repository.save(contaPagar));
     }
 
-    @GetMapping("/{id}[0-9]")
+    @CrossOrigin
+    @GetMapping("/{codigo}[0-9]")
     public ResponseEntity<?> getById(@PathVariable("codigo") Integer codigo){
         try{
             Optional<ContaPagar> conta = this.repository.findById(codigo);
@@ -38,6 +40,5 @@ public class ContaPagarController {
         }catch (Exception e){
             return ResponseEntity.badRequest().body(e);
         }
-
     }
 }
