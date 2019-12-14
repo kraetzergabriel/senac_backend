@@ -1,13 +1,13 @@
-package br.com.senac.marmeteria;
+package br.com.senac.prova;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MarmeteriaApplication {
+public class ProvaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MarmeteriaApplication.class, args);
+		SpringApplication.run(ProvaApplication.class, args);
 	}
 
 }
